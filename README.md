@@ -46,7 +46,7 @@ nvm current # Should print "v23.4.0".
 npm install -g pm2 bytenode yarn
 ```
 
-### 4. 将 Astro-0.5.1.zip 解压到任意目录
+### 4. 将最新版本 Astro-x.x.x.zip 解压到任意目录
 解压后得到三个文件夹 ```astro-core```, ```astro-server```, ```astro-admin``` \
 进入 astro-core 目录，执行 ```yarn``` \
 修改 astro-server/.env 文件，将 ALLOWED_DOMAIN 字段配置为云服务器公网IP地址 \
@@ -60,7 +60,7 @@ npm install -g pm2 bytenode yarn
 |--------------------------|-----------------------------------------------------------------|
 | `PORT`                   | 端口号，需要防火墙放行此端口                                      |
 | `ALLOWED_DOMAIN`         | 云服务公网IP地址，也可以填域名（填写域名需替换证书）                                      |
-| `ADMIN_PREFIX`           | 管理后台访问的 URL 前缀，可以自行更改                             |
+| `ADMIN_PREFIX`           | 管理后台访问的 URL 前缀，可自行更改                             |
 | `ADMIN_SECURITY_CODE`    | 登录密码                                                        |
 | `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用，可自行修改     |
 
