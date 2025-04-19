@@ -47,11 +47,10 @@ npm install -g pm2 bytenode yarn
 ```
 
 ### 4. 将 Astro-0.5.1.zip 解压到任意目录
-解压后得到三个文件夹 astro-core, astro-server, astro-admin \
-进入 astro-core 目录，执行 yarn \
+解压后得到三个文件夹 ```astro-core```, ```astro-server```, ```astro-admin``` \
+进入 astro-core 目录，执行 ```yarn``` \
 修改 astro-server/.env 文件，将 ALLOWED_DOMAIN 字段配置为云服务器公网IP地址 \
-进入 astro-server 目录，执行 yarn \
-然后执行 pm2 start pm2.config.js \
+进入 astro-server 目录，执行 ``` yarn && pm2 start pm2.config.js ```  
 
 假设你的公网IP是 1.2.3.4，使用浏览器打开：https://1.2.3.4:12345/-change-it-after-installation-/ 
 
