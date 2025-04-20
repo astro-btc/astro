@@ -66,3 +66,38 @@ npm install -g pm2 bytenode yarn
 
 
 此配置文件修改过后，请执行 ```pm2 restart astro-server``` 重启生效 
+
+### 6. 如何配置交易所API？
+‼️ 请务必每一个api都添加IP地址白名单 ‼️  \
+‼️ 请务必 **不要** 开通[提现]权限 ‼️ 
+
+#### a. Binance
+合约账户类型必须是 **统一账户**, 权限相关参考下图：\
+![](BN-api.png)
+
+#### b. Bybit
+权限相关参考下图：\
+![](Bybit-API.png)
+
+#### c. Bitget
+请使用联合保证金模式，权限相关参考下图：\
+![](BG-API.png)
+
+#### d. OKX
+请使用跨币种保证金模式，权限相关参考下图：\
+![](OKX-API.png)
+
+#### e. Gate
+请使用统一账户+跨币种保证金模式，权限相关参考下图：\
+![](Gate-API.png)
+
+#### f. Kucoin
+权限相关参考下图：\
+![](kucoin-API.png)
+
+#### g. Bitmart
+权限相关参考下图：\
+![](bitmart-API.png)
+
+#### h. Aster
+官网直接配置即可
