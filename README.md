@@ -96,9 +96,5 @@ npm install -g pm2 bytenode yarn
 权限相关参考下图：\
 ![](kucoin-API.png)
 
-#### g. Bitmart
-权限相关参考下图：\
-![](bitmart-API.png)
-
-#### h. Aster
+#### g. Aster
 官网直接配置即可
