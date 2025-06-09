@@ -1,8 +1,10 @@
 # astro - 安装教程
 
-### 1. 云服务器需求
-切记不可以使用中国境内服务器，推荐日本地区，推荐阿里云或AWS \
-操作系统: ```Ubuntu 24.04版本``` \
+### 1. 云服务器要求
+切记不可以使用中国境内服务器，推荐阿里云或AWS日本地区 \
+**境外网络完全可以本地部署，交易所KEY需要绑定IP，请注意IP变化** \
+
+操作系统: ```Ubuntu 24.x版本``` \
 系统架构：```x86-64``` \
 内存：```最少1GB``` \
 运行```hostnamectl```命令,返回以下结果
@@ -14,7 +16,7 @@ Static hostname: *
       Machine ID: *
          Boot ID: *
   Virtualization: kvm
-Operating System: Ubuntu 24.04.1 LTS        // * 这项是必须的
+Operating System: Ubuntu 24.04.1 LTS        // * 这项是必须的, 24.x版本
           Kernel: Linux 6.8.0-40-generic
     Architecture: x86-64                    // * 这项是必须的
  Hardware Vendor: Alibaba Cloud
@@ -24,38 +26,11 @@ Firmware Version: 0.0.0
     Firmware Age: 10y 2month 1w 5d 
 ```
 
-### 2. 安装 node 23.4.0 版本
+### 2. 执行一键安装脚本 (需输入公网IP地址)
 ```
-# Download and install nvm:
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
-
-# in lieu of restarting the shell
-\. "$HOME/.nvm/nvm.sh"
-
-# Download and install Node.js:
-nvm install 23.4.0
-
-# Verify the Node.js version:
-node -v # Should print "v23.4.0".
-nvm current # Should print "v23.4.0".
-
+curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu-x64-install.sh | sudo bash -
 ```
-
-### 3. 安装node全局依赖包
-```
-npm install -g pm2 bytenode yarn
-```
-
-### 4. 将最新版本 Astro-x.x.x.zip 解压到任意目录
-解压后得到三个文件夹 ```astro-core```, ```astro-server```, ```astro-admin``` \
-进入 astro-core 目录，执行 ```yarn``` \
-修改 astro-server/.env 文件，将 ALLOWED_DOMAIN 字段配置为云服务器公网IP地址 \
-进入 astro-server 目录，执行 ``` yarn && pm2 start pm2.config.js ```  \
-设置开启启动：在任意目录执行 ```pm2 startup && pm2 save```
-
-假设你的公网IP是 1.2.3.4，使用浏览器打开：https://1.2.3.4:12345/-change-it-after-installation-/ 
-
-### 5. astro-server/.env 文件字段说明
+### 3. astro-server/.env 文件字段说明
 
 | **配置项**               | **说明**                                                        |
 |--------------------------|-----------------------------------------------------------------|
@@ -66,9 +41,9 @@ npm install -g pm2 bytenode yarn
 | `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用，可自行修改     |
 
 
-此配置文件修改过后，请执行 ```pm2 restart astro-server``` 重启生效 
+此配置文件修改过后，请执行 ```sudo pm2 restart astro-server``` 重启生效 
 
-### 6. 如何配置交易所API？
+### 4. 如何配置交易所API？
 ‼️ 请务必每一个api都添加IP地址白名单 ‼️  \
 ‼️ 请务必 **不要** 开通[提现]权限 ‼️ 
 
